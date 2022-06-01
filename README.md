@@ -13,7 +13,7 @@ my_fuzzer = Fuzzer()
 ### Create a target function to test
 first import target function into the fuzzer.py file
 ```python
-my_fuzzer.fuzz('[function name *no parenthesis)], [parameter types], [# of rounds])
+my_fuzzer.fuzz('[function name *no parenthesis)]', [parameter types], [# of rounds])
 ```
 ### Get crash report
 ```python
