@@ -31,6 +31,8 @@ my_fuzzer.reset_crashes()
 ### Example code
 main.py
 ```python
+from fuzzer import Fuzzer
+
 my_fuzzer = new Fuzzer()
 my_fuzzer.fuzz('my_function', ["String", "Integer"], 10)
 my_fuzzer..print_crash_logs()
