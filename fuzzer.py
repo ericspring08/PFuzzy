@@ -6,6 +6,9 @@ import sys
 # add any imports or functions that will be used for testing here
 import wikipedia
 from art import *
+
+def my_function(name) :
+    print(name[10])
 #---------------------------------------------------
 
 
