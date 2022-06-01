@@ -1,22 +1,13 @@
-from cgitb import enable
 import random
 import string
 import sys
 import os
 import sys
-# add any imports that will be used for testing here
+# add any imports or functions that will be used for testing here
 import wikipedia
 from art import *
 #---------------------------------------------------
 
-class HiddenPrints:
-    def __enter__(self):
-        self._original_stdout = sys.stdout
-        sys.stdout = open(os.devnull, 'w')
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        sys.stdout.close()
-        sys.stdout = self._original_stdout 
 
 class Fuzzer:
     def __init__(self) :
@@ -90,3 +81,12 @@ class Fuzzer:
         sys.stdout.flush()
         sys.stdout.write("[{:<{}}] {:.0f}%".format("#" * int(barLen * percent), barLen, percent * 100))
         sys.stdout.write("\r")
+
+class HiddenPrints:
+    def __enter__(self):
+        self._original_stdout = sys.stdout
+        sys.stdout = open(os.devnull, 'w')
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        sys.stdout.close()
+        sys.stdout = self._original_stdout 
